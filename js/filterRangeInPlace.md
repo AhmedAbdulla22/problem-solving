@@ -13,4 +13,17 @@ For instance:
 ``` `let` arr `=` `[``5``,` `3``,` `8``,` `1``]``;`  `filterRangeInPlace``(`arr`,` `1``,` `4``)``;` `// removed the numbers except from 1 to 4`  `alert``(` arr `)``;` `// [3, 1]` ```
 
 # Solution
-![[Pasted image 20250613111823.png]]
+```js
+function filterRangeInPlace(arr,a,b) {
+	for(let i = 0; i < arr.length ; i++) {
+        if(arr[i] < a || arr[i] > b) {
+            arr.splice(i,1);
+            i--; //correct the index
+        }
+    }
+}
+
+
+let arr = [5, 9,3, 8, 1];
+filterRangeInPlace(arr,1,4)
+```
